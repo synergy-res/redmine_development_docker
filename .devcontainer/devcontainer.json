@@ -16,7 +16,9 @@
                 "kaiwood.endwise",
                 "mtxr.sqltools",
                 "mtxr.sqltools-driver-pg",
-                "ms-vsliveshare.vsliveshare"
+                "ms-vsliveshare.vsliveshare",
+                "mhutchie.git-graph",
+                "esbenp.prettier-vscode"
             ],
             "settings": {
                 "[ruby]": {
