@@ -24,6 +24,8 @@ chmod a+x /var/lib/.git-completion.bash
 
 # git 文字化け対処
 git config --global core.pager "LESSCHARSET=utf-8 less"
+# gitのデフォルトエディタをvimに変更
+git config --global core.editor vim
 
 echo 'ja_JP.UTF-8 UTF-8' >> /etc/locale.gen
 locale-gen
@@ -40,7 +42,11 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.co
 apt-get update && apt-get install nodejs -y
 
 # Add aws-cli
-curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
+cd /tmp
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
-./aws/install
-chmod +x /usr/local/bin/aws
+sudo ./aws/install
+cd $APP_HOME
+
+# Setting rexer gem
+grep -qxF '.extensions.*' .git/info/exclude || echo -e '\n.extensions.*' >> .git/info/exclude

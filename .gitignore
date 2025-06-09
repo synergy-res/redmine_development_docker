@@ -1,3 +1,6 @@
 app
 share
 !share/.gitkeep
+.env
+.devcontainer/devcontainer.json.bak
+.DS_Store
