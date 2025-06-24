@@ -8,6 +8,8 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: db_user
+    networks:
+      - test-group
 
   # MySQL
   # mysqldb:
@@ -50,6 +52,8 @@ services:
       # - ./share:/var/lib/redmine/../share
       # - ./app/public:/var/lib/redmine/themes
       # - ./app/plugins:/var/lib/redmine/plugins
+    networks:
+      - test-group
 
   # For selenium test
   # chrome:
@@ -64,3 +68,9 @@ services:
     image: schickling/mailcatcher
     ports:
       - $MAILCATCHER_PORT:1080
+    networks:
+      - test-group
+
+networks:
+  test-group:
+    external: true

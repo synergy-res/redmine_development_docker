@@ -8,6 +8,8 @@
     "remoteEnv": {
         "BUNDLE_APP_CONFIG": null
     },
+    // Configure docker network for the container.
+    "initializeCommand": "docker network inspect test-group || docker network create test-group",
     "customizations": {
         // Configure properties specific to VS Code.
         "vscode": {
