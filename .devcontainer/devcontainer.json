@@ -8,6 +8,9 @@
     "remoteEnv": {
         "BUNDLE_APP_CONFIG": null
     },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
     // Configure docker network for the container.
     "initializeCommand": "docker network inspect test-group || docker network create test-group",
     "customizations": {
@@ -40,8 +43,8 @@
                         "server": "postgresdb",
                         "port": 5432,
                         "driver": "PostgreSQL",
-                        "name": "app_development",
-                        "database": "app_development",
+                        "name": "app",
+                        "database": "app",
                         "username": "db_user",
                         "password": "password"
                     }

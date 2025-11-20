@@ -36,7 +36,7 @@ services:
       RAILS_DB_USERNAME: db_user
       RAILS_DB_PASSWORD: password
       RAILS_DB_ENCODING: utf8
-      RAILS_ENV: development
+      RAILS_ENV: production
     env_file: .env
     tty: true
     ports:
@@ -49,9 +49,9 @@ services:
       # 全体を同期すると速度が遅くなるため、上の1行を消して下の4行のコメントアウトを外してもいい
       # その場合、同期場所がgitの履歴とshareディレクトリのみになるため、git commitしたもの + shareディレクトリに入れたファイル以外はコンテナのキャッシュが消えたときに消える
       - ./app/.git:/var/lib/redmine/.git
-      # - ./share:/var/lib/redmine/../share
+      - ./share:/var/lib/redmine/../share
       # - ./app/public:/var/lib/redmine/themes
-      # - ./app/plugins:/var/lib/redmine/plugins
+      - ./app/plugins:/var/lib/redmine/plugins
     networks:
       - test-group
 
