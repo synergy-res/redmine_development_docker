@@ -8,11 +8,11 @@ ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 RUN set -eux; \
   apt update && \
-  apt upgrade && \
+  apt upgrade -y && \
   apt install -y --no-install-recommends \
     bzr git mercurial subversion \
-    gsfonts \
-    imagemagick libmagick++-dev \
+    gsfonts fonts-takao-gothic \
+    imagemagick libmagick++-dev ghostscript \
     build-essential libpq-dev libclang-dev \
     vim less locales locales-all \
     default-libmysqlclient-dev libsqlite3-dev \

@@ -48,7 +48,7 @@ services:
       # その場合、同期場所がgitの履歴とshareディレクトリのみになるため、git commitしたもの + shareディレクトリに入れたファイル以外はコンテナのキャッシュが消えたときに消える
       - ./app/.git:/var/lib/redmine/.git
       # - ./share:/var/lib/redmine/../share
-      # - ./app/public:/var/lib/redmine/themes
+      # - ./app/themes:/var/lib/redmine/themes
       # - ./app/plugins:/var/lib/redmine/plugins
 
   # For selenium test
