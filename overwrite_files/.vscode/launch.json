@@ -9,7 +9,11 @@
             "script": "${workspaceRoot}/bin/rails server ",
             "args": ["-b", "0"],
             "askParameters": false,
-            "useBundler": false
+            "useBundler": false,
+            "env": {
+                "SECRET_KEY_BASE": "rails secret",
+                "RAILS_LOG_TO_STDOUT": "1"
+            }
         },
         {
             "type": "rdbg",
@@ -20,7 +24,11 @@
             "args": [
             ],
             "askParameters": false,
-            "useBundler": false
+            "useBundler": false,
+            "env": {
+                "SECRET_KEY_BASE": "rails secret",
+                "RAILS_LOG_TO_STDOUT": "1"
+            }
         },
     ]
 }
